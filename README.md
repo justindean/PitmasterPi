@@ -49,16 +49,62 @@ PitmasterPi Hardware:
 ======
 
 -Raspberry Pi (currently using model B+), 5v power supply
+
 -Raspbian OS
+
 -USB Wireless dongle
+
 -12v Squirrel cage style blower fan
+
 -Adjustable output 12v power supply (i set mine to 6v which gets the right amount of power/airflow from blower fan)
+
 -High temperature K type Thermocouple with Stainless sheeth tip (made for oven or bbq ideally)
+
 -Thermocouple connector and amplifier: http://www.robogaia.com/raspberry-temperature-controller-plate.html (I use this, I'll explain more below)
+
 -Relay Board for switching power:  http://www.robogaia.com/raspberry-temperature-controller-plate.html (same as above)
+
 -Case: Need a case to house all the components nicely. TBD
+
 
 PitmasterPi Operations Basics:
 =====
+
+The basic principal of the PitmasterPi is that it controls the temperature of the cooking chamber of the BBQ Pit by controlling the temperature of the fire in the fire box.  It controls the fire by controlling the amount of air/oxygen allowed to be consumed by the fire.  Oxygen is a main component for combustion, so more oxygen more fire more heat and less oxygen less fire and less heat.  It sounds kind of lofty to think we could control something as wild and untamable as fire, but in practice it works quite well.  
+
+We start with a good BBQ pit.  You need to be able to seal up the firebox area to where the only source of air is the PitmasterPi blower.  This is crucial to keeping steady/predictable temps.  If there are air gaps in your firebox (doors, etc) a nice breeze could stoke your fire out of control.
+
+1. Connect Thermocouple into cooking chamber of your pit
+2. Connect Blower fan to firebox (3/4" black pipe couplings work great, JBweld to blower, mount/seal a pipe nipple at bottom of your firbox)
+3. Turn on PitmasterPi, wifi connected and ssh'able, plug in dc wall adapter to supply power to fan
+4. Load firebasket with charcoal/wood chunks
+5. Torch middle section for 30 seconds to get baseball sized cherry red area started
+6. Seal up firebox and pit, keep exhaust vent open for proper (outbound) airflow
+7. SSH to PitmasterPi, start a screen session, initialize the relays (sudo ./temperature_controller_init)
+8. Start your BBQ Process and supply it your desired set temp (sudo ./PitmasterPi.py 225) 
+9. PitmasterPi will then control the blower fan to stoke the fire to ramp it to the Set temp. 
+10. Put on meat
+11. Once at temp, PitmasterPi will setup alerting and constantly tend to the fire while trying not to overshoot the temp (PID)
+12. You can monitor temps along the way via the python process itself has a lot of verbose output, xively portal graphs, dweet.io data feeds, freeboard.io dashboard or you can go old school and look at the thermometer mounted on your pit.
+
+
+PitmasterPi Todo List:
+=====
+
+While the basic operations of pit tending works well and really makes PitOps much easier, there are a TON of things on the radar to make it much better:
+
+-Temperature Probes for the Meat.  This seems obvious, but its much tricker since we are using High Temp thermocouples which are analog instead of the much easier digital sensors.  Since we are dealing with fire and high temps, the digital sensors would fry, so as such we need to be able to collect analog data from the sensor, convert it to a unit of measure we can use (C or F).  Since the voltage measurements are so low with analog thermocouples we need to have circuitry to amplify the signal for accurate readings as well as to offset the temperature changes at the cold junctions of the board itself.  This is where the Robogaia temperature controller board comes into play.  It provides everything needed to connect an analog K type thermocouple to the raspberry pi to get temp measurements AND it also combines 2 relays to allow us to switch power to something (in our case its the blower fan).  In order to add more thermocouples to the raspberry pi, we would need another board (cost prohibitive) and/or find a sleeker alternative for adding multiple analog thermocouples to the RPi.  In its current state, this probably means building the circuit board yourself, soldering, etc, which makes it much less user friendly for the general population.
+
+-Better case.  Need to put it all together nicely so its not just laying on the ground.
+
+-PID algorithm auto learning and tuning.  Everyones pit is different, would be great to use some machine learning/robotics techniques to auto learn the thermal properties of the pit and tune the P, I and D values accordingly.
+
+-Cook and Hold.  Once we get food probes going, we can add in the ability to ramp temps, hold them for the cook, when food temps are almost done then ramp down the pit temp to match the food done temp and hold it there for you until its time to eat.
+
+-Bi-directional controls.  When it sends you an alert it would be nice if you could give it a command of some sort.
+
+-Raspberry Pi failure detection.  Need to build in methods to keep an eye on the raspberry pi itself and be able to gracefully handle a crash.
+
+-Lid open detection.  When you open the lid to put on the meat or baste it, etc, the pit temp drops.  This causes the PitmasterPi to start stoking the fire way beyond whasts needed.  When the lid goes back on, you may overshoot the set temp for a while as it stoked it too much.  
 
 
