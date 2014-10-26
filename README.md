@@ -19,7 +19,8 @@ Culture:
 =====
 Starting with culture.  The process of BBQ is very labor entensive and manual.  It is very high touch throughout the whole process and everyone's turns out different.  Its viewed as a very artistic process where the pitmaster puts his heart and soul into the process to produce a peice of meat with his very essence in it.  This sounds a lot like the same artisan Ops/Devs who roll thier code into production on beautifully hand crafted servers that have been chiseled to perfection right there on the spot in live production.  One of a kind, artisan servers with the essence of each individual engineer who touched it last, while may sound romantic on the surface we all know is a terrible idea.  I think we can change the BBQ culture to see the craft and artistry of the process should be focused on the meat itself, ingredients, spice rubs, marindates, (Source Code if you will) and NOT the cooking pipeline itself.  The cooking process is ripe for productionalizing.
 
-Automation:  
+Automation: 
+=====
 This is where the main bang for our buck is.  Automating the BBQ cooking process to make it much more efficient, predictable, repeatable and ultimately to change the game when it comes to PitOps (no more babysitting the bbq pit).
 
 -Starting the Fire:  Starting the fire used to be a pretty big process (pain).  You had to get a fire going or light your charcoal, then after 30 minutes when it start to ash over you close up the BBQ pit and hope (pray) that the pit will even out somewhere remotely close to your desired cook temp.  Usually it would overshoot by a ton and you have to play with air vents for an hour to get it dialed in.  The process of lighting the fire is still a bit manual unfortunately (for now) but has been greatly reduced down to less than 1 minute.  Since we have automated fire control, now we can use a MAPP gas torch, torch one small section of the firebasket for 30 seconds to get a cherry red spot going then close up the pit and "deploy".  PitmasterPi will take care of the rest.
@@ -29,6 +30,7 @@ This is where the main bang for our buck is.  Automating the BBQ cooking process
 -Cooking Temperature Hold:  This is the main function of PitmasterPi.  Its main goal in life is to keep the fire stoked to the appropriate level to keep the cooking chamber dialed into your desired set temp.  All day, all night.  This is the piece that takes PitOps from being like working in the NOC on Cyber Monday after a major press release to more like being Secondary On-call for a very stable system.  PitmasterPi uses the same PID algorithm to keep temps dialed in within a couple degrees.
 
 Metrics:
+===
 What fun would an automated BBQ Pit be without metrics.  This is an area where you may wish to expand into your own favorite tools of choice.  While I wanted to initially use the toolset from work Tcollector/OpenTSDB, Splunk, etc, I thought it would be much more IoT friendly and approachable to use simple cloud based tools.
 
 -Temperature Timeseries Graphing and Trending:  For logging temperature data for real-time and historical trending we use Xively.  Theres a nice xively python module to allow PitmasterPi to send timeseries temp data every few seconds.  
