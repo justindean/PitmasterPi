@@ -5,6 +5,8 @@ BBQ Automated Temperature Controller using Raspberry Pi and PitOPS Practices
 
 The goal of this project is to marry the Devops philosophies, spirit and practices with the art of making great BBQ in order to produce a much more consistant and quality finished product each and every time.  
 
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/Ribs-Done.JPG)
+
 The Problem:
 ===========
 
@@ -24,6 +26,8 @@ Automation:
 This is where the main bang for our buck is.  Automating the BBQ cooking process to make it much more efficient, predictable, repeatable and ultimately to change the game when it comes to PitOps (no more babysitting the bbq pit).
 
 -Starting the Fire:  Starting the fire used to be a pretty big process (pain).  You had to get a fire going or light your charcoal, then after 30 minutes when it start to ash over you close up the BBQ pit and hope (pray) that the pit will even out somewhere remotely close to your desired cook temp.  Usually it would overshoot by a ton and you have to play with air vents for an hour to get it dialed in.  The process of lighting the fire is still a bit manual unfortunately (for now) but has been greatly reduced down to less than 1 minute.  Since we have automated fire control, now we can use a MAPP gas torch, torch one small section of the firebasket for 30 seconds to get a cherry red spot going then close up the pit and "deploy".  PitmasterPi will take care of the rest.
+
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/fire-start.JPG)
 
 -Initial Temperature Ramp:  When you start PitmasterPi, you give it your desired cooking temp setpoint.  It will then ramp up the temperature to the set point by stoking the fire in a very controlled manner.  It uses a PID algorithm combined with some sensible delays based on proximity to your setpoint to ramp up the temperature without ending up with a raging fire and overshooting the set point.  Once its up to temp it will send you a message and you can put the meat on.
 
