@@ -40,3 +40,25 @@ What fun would an automated BBQ Pit be without metrics.  This is an area where y
 -Real-Time Dashboard: We use Freeboard.io.  Freeboard.io is a very simple dashboard creater that uses the message data we put into dweet.io.  Gives us a nice dashboard for real time BBQ Pit data on any browser.  I.e. Sitting at your sons football game, you can watch your Pit temps on your iphone.
 
 -Monitoring/Alerting: This is one area where we can expand quite a bit.  For the moment, PitmasterPi is using dweet.io as the alerting platform.  Once the pit is done ramping up to temperature and enters the cooking stage, it will automatically setup a monitor/alert in dweet.io that will trigger an alert if the pit gets too high or too low.  It will send you emails/text, so you can go about your day without constantly watching the pit thermometer.  This is critical for those all-nighter Briskets and Pork Butts.  No more getting up 5 times a night to check on it, just go to sleep and PitmasterPi will take care of tending the fire and if something crazy happens you'll get a text message.
+
+Sharing:
+===
+Just as sharing is important and critical for success for any shop, team or company, sharing is imporant around PitmasterPi and PitOps.  There are so many devices, tools and practices out there that are constantly evolving that every project can be constantly improved by the shared knowledge and contributions of others.  In the spirit of sharing, I will be putting all the code, hardware and build information in this repo for others to use and hopefully contribute to.  There are a lot of things left to build (food temps, PID algorithm autotuning, servos?, cheaper hw alternatives, lid off detection, etc).
+
+PitmasterPi Hardware:
+======
+
+-Raspberry Pi (currently using model B+), 5v power supply
+-Raspbian OS
+-USB Wireless dongle
+-12v Squirrel cage style blower fan
+-Adjustable output 12v power supply (i set mine to 6v which gets the right amount of power/airflow from blower fan)
+-High temperature K type Thermocouple with Stainless sheeth tip (made for oven or bbq ideally)
+-Thermocouple connector and amplifier: http://www.robogaia.com/raspberry-temperature-controller-plate.html (I use this, I'll explain more below)
+-Relay Board for switching power:  http://www.robogaia.com/raspberry-temperature-controller-plate.html (same as above)
+-Case: Need a case to house all the components nicely. TBD
+
+PitmasterPi Operations Basics:
+=====
+
+
