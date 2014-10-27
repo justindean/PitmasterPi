@@ -1,21 +1,21 @@
 PitmasterPi
 ===========
 
-BBQ Automated Temperature Controller using Raspberry Pi and PitOps Practices.
+BBQ Automated Temperature Controller using Raspberry Pi and some Devops type practices/toolchains for improving the state of "PitOps".
 
-The goal of this project is to marry the Devops philosophies, spirit and practices with the art of making great BBQ in order to produce a much more consistant and quality finished product each and every time.  
+The goal of this project is to marry the Devops type philosophies, spirit and practices with the art of making great BBQ in order to produce a much more consistant and quality finished product each and every time.  Obviously its a very loose coupling of the two worlds, but there are definitely efficiencies to be gained by leveraging the practices the Devops community has been continuing to develop and tune.  
 
 ![](https://github.com/justindean/PitmasterPi/blob/master/Images/Ribs-Done.JPG)
 
 The Problem:
 ===========
 
-We've all been there before.  You've invited a bunch of people over for dinner.  You've bought your meat and ingredients.  You have a lot of things to do that day, sons football game, trip to the store, pickup daughter from the mall, mow the lawn and most of all you need to get the house nice and cleaned up ready for guests.  The issue is you need to get the BBQ pit fired up early, so you can get it dialed into the right temperature.  Then you have to get your meat on there and get the pit temperature leveled back out to the right temps once again.  Once the meats on the grill, you start your all day job of tending the fire.  Every 15 minutes you need to make sure its stable at the desired temp, a full day of messing with air vents and dealing with hot and cold spells on the pit.  You can't just take off and do the things you need to today, you are officially on PitOps.  Your significant other now has to pick up the slack on everthing else or you risk the chances of burnt BBQ if you try to slip off for more than a few minutes.  That's a bad start to the day for everyone.  You need better PitOps.
+We've all been there before.  You've invited a bunch of people over for dinner.  You've bought your meat and ingredients.  You have a lot of things to do that day, sons football game, trip to the store, pickup daughter from the mall, mow the lawn and most of all you need to get the house nice and cleaned up ready for guests.  The issue is you need to get the BBQ pit fired up early, so you can get it dialed into the right temperature.  Then you have to get your meat on there and get the pit temperature leveled back out to the right temps once again.  Once the meats on the grill, you start your all day job of tending the fire.  Every 15 minutes you need to make sure its stable at the desired temp, a full day of messing with air vents and dealing with hot and cold spells on the pit.  You can't just take off and do the things you need to today, you are officially on PitOps.  Your significant other now has to pick up the slack on everthing else or you risk the chances of burnt BBQ if you try to slip off for more than a few minutes.  That's a bad start to the day for everyone.  Even after you have dedicated the day to manually babysitting the pit, you still have most likely had temperature drops and spikes along the way that definitely has an impact on the food quality.  Let's say it was the best BBQ you have ever produced, could you do it again exactly the same?  How long did it cook?  What temperatures? Will you remember the details in a month?  I think we can agree, we need better PitOps.
 
 PitOps:
 ===========
 
-By (loosely) leveraging DEVOPS "CAMS" principals we can add much more efficiency, automation and ultimately change the culture around BBQ in every household.  
+By (loosely) leveraging the DEVOPS "CAMS" principals we can add much more efficiency, automation and ultimately change the culture around BBQ in every household.  
 
 ## Culture:  
 
@@ -24,6 +24,12 @@ Starting with culture.  The process of BBQ is very labor entensive and manual.  
 ## Automation: 
 
 This is where the main bang for our buck is.  Automating the BBQ cooking process to make it much more efficient, predictable, repeatable and ultimately to change the game when it comes to PitOps (no more babysitting the bbq pit).
+
+### -Open Source and Revision Control
+First and foremost, all of the code is open source and lives on github.  This gives you 100% access and control to know exactly how the algorithm/process works and allows for easy tweeks, changes and feature additions.  Most BBQ controllers out there are completely proprietary with no access to the inter workings.  
+
+### -Repeatable Code Deployment
+Given Raspberry Pi's are a hobby board you may wish to use it for other tasks besides BBQ.  Go for it.  When you need it to cook again, just deploy the lastest version from github. (will be adding cleaner packaging/template/install in the future).  This also allows you to keep multiple PitmasterPi's identical in case you have multiple BBQ pits or if you are on a competition BBQ team where having identical systems is more critical.
 
 ### -Starting the Fire:  
 Starting the fire used to be a pretty big process (pain).  You had to get a fire going or light your charcoal, then after 30 minutes when it start to ash over you close up the BBQ pit and hope (pray) that the pit will even out somewhere remotely close to your desired cook temp.  Usually it would overshoot by a ton and you have to play with air vents for an hour to get it dialed in.  The process of lighting the fire is still a bit manual unfortunately (for now) but has been greatly reduced down to less than 1 minute.  Since we have automated fire control, now we can use a MAPP gas torch, torch one small section of the firebasket for 30 seconds to get a cherry red spot going then close up the pit and "deploy".  PitmasterPi will take care of the rest.
@@ -37,11 +43,14 @@ When you start PitmasterPi, you give it your desired cooking temp setpoint.  It 
 ![](https://github.com/justindean/PitmasterPi/blob/master/Images/pit_ramping.JPG)
 
 ### -Cooking Temperature Hold:  
-This is the main function of PitmasterPi.  Its main goal in life is to keep the fire stoked to the appropriate level to keep the cooking chamber dialed into your desired set temp.  All day, all night.  This is the piece that takes PitOps from being like working in the NOC on Cyber Monday after a major press release to more like being Secondary On-call for a very stable system.  PitmasterPi uses the same PID algorithm to keep temps dialed in within a couple degrees.
+This is the main function of PitmasterPi.  Its main goal in life is to keep the fire stoked to the appropriate level to keep the cooking chamber dialed into your desired set temp.  All day, all night.  This is the piece that takes PitOps from being like working in the NOC on Cyber Monday after a major press release to more like being Secondary On-call for a very stable system.  PitmasterPi uses the same PID algorithm to dynamically keep temps dialed in within a couple degrees.  Having this functionality has changed BBQ'ing from being a huge "Waterfall" type production with lots of prep, scheduling and logistics to manage "BBQ Release Day" to a much more "Continual Delivery" model where I have an automated PitOps pipeline in place, where I can confidently deploy a large piece of meat into production and know it will produce consistent results.
+
+### -Efficiency:
+You can already see the massive efficiency gains on the operational side of things, but there is also a huge efficiency gain on the resource side as well.  By having very tight control of the fire, we save a massive amount of fuel.  In my pit for example, I can get ~20 hours from a 10lb bag of charcoal cooking at 220*F.  That's double what I would get in a manual setup.  PitmasterPi will save you hard earned OPEX dollars!
 
 ## Metrics:
 
-What fun would an automated BBQ Pit be without metrics.  This is an area where you may wish to expand into your own favorite tools of choice.  While I wanted to initially use the toolset from work Tcollector/OpenTSDB, Splunk, etc, I thought it would be much more IoT friendly and approachable to use simple cloud based tools.
+What fun would an automated BBQ Pit be without metrics.  This is an area where you may wish to expand into your own favorite tools of choice.  While I wanted to initially use the toolset from work Tcollector/OpenTSDB, Splunk, etc, I thought it would be much more IoT friendly and approachable to use simple cloud based tools easily accessible by everyone.
 
 ### -Temperature Timeseries Graphing and Trending:  
 For logging temperature data for real-time and historical trending we use Xively.  Theres a nice xively python module to allow PitmasterPi to send timeseries temp data every few seconds.  
