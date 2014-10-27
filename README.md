@@ -168,7 +168,7 @@ Recent PitmasterPi Cooks:
 ![](https://github.com/justindean/PitmasterPi/blob/master/Images/pulled-pork.JPG)
 
 ### Smoked Sausage:
-![](https://github.com/justindean/PitmasterPi/blob/master/Images/sausages2.jpg)
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/sausages3.jpg)
 
 ### St. Louis Style Ribs:
 ![](https://github.com/justindean/PitmasterPi/blob/master/Images/ribs-uncooked.JPG)
