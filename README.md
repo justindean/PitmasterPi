@@ -148,3 +148,22 @@ While the basic operations of pit tending works well and really makes PitOps muc
 -Lid open detection.  When you open the lid to put on the meat or baste it, etc, the pit temp drops.  This causes the PitmasterPi to start stoking the fire way beyond whasts needed.  When the lid goes back on, you may overshoot the set temp for a while as it stoked it too much.  
 
 
+Recent PitmasterPi Cooks:
+======
+
+### 16 Hour Pork Butt for Pulled Pork Sandwiches:
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/pork-butt-pit.JPG)
+
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/pork-butt.JPG)
+
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/pulled-pork.JPG)
+
+### Smoked Sausage:
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/sausages.jpg)
+
+### St. Louis Style Ribs:
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/ribs-uncooked.JPG)
+
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/ribs-done-smoking.JPG)
+
+
