@@ -162,6 +162,10 @@ While the basic operations of pit tending works well and really makes PitOps muc
 
 -Code cleanup (remove hardcodes, more try/except blocks, more comments, PyLint, error handling)
 
+-Detailed Wiring Diagrams
+
+-Move from Grounded to Ungrounded K Type Thermocouple in order to prevent grounding loops and intermittent stray temp readings
+
 
 Recent PitmasterPi Cooks:
 ======
