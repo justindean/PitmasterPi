@@ -31,6 +31,9 @@ This is where the main bang for our buck is.  Automating the BBQ cooking process
 
 -Initial Temperature Ramp:  When you start PitmasterPi, you give it your desired cooking temp setpoint.  It will then ramp up the temperature to the set point by stoking the fire in a very controlled manner.  It uses a PID algorithm combined with some sensible delays based on proximity to your setpoint to ramp up the temperature without ending up with a raging fire and overshooting the set point.  Once its up to temp it will send you a message and you can put the meat on.
 
+BBQ Pit Starting to ramp up to temps.  (Definitely need a nice case to house all the electronics)
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/pit_ramping.JPG)
+
 -Cooking Temperature Hold:  This is the main function of PitmasterPi.  Its main goal in life is to keep the fire stoked to the appropriate level to keep the cooking chamber dialed into your desired set temp.  All day, all night.  This is the piece that takes PitOps from being like working in the NOC on Cyber Monday after a major press release to more like being Secondary On-call for a very stable system.  PitmasterPi uses the same PID algorithm to keep temps dialed in within a couple degrees.
 
 Metrics:
@@ -39,6 +42,10 @@ What fun would an automated BBQ Pit be without metrics.  This is an area where y
 
 -Temperature Timeseries Graphing and Trending:  For logging temperature data for real-time and historical trending we use Xively.  Theres a nice xively python module to allow PitmasterPi to send timeseries temp data every few seconds.  
 
+Xively Dash showing a nice 6hr view of steady pit temps:
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/xively_6hr.png)
+
+Xively Snapshot from Iphone at kids football game:
 ![Xively Snapshot from Iphone - 6hr view](https://github.com/justindean/PitmasterPi/blob/master/Images/xively-iphone-6hr.PNG)
 
 -Temperature Datastore:  PitmasterPi also uses Dweet.io for storing temperature data.  Dweet.io allows for ridiculously simple messaging (and alerting) for devices.  It's like twitter for devices and is gaining traction in the Internet of Things community.  The dweet.io key/value datastore data we send can be leveraged for multiple purposes (dashboards, alerting, etc).
