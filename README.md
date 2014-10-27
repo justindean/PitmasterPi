@@ -156,6 +156,12 @@ While the basic operations of pit tending works well and really makes PitOps muc
 
 -Lid open detection.  When you open the lid to put on the meat or baste it, etc, the pit temp drops.  This causes the PitmasterPi to start stoking the fire way beyond whasts needed.  When the lid goes back on, you may overshoot the set temp for a while as it stoked it too much.  
 
+-QA/Test environment or test harness to allow for both regression testing as well as new functionality testing without having to do a full production run.
+
+-Code packaging/templating/Config Management
+
+-Code cleanup (remove hardcodes, more try/except blocks, more comments, PyLint, error handling)
+
 
 Recent PitmasterPi Cooks:
 ======
