@@ -40,7 +40,7 @@ Starting the fire used to be a pretty big process (pain).  You had to get a fire
 When you start PitmasterPi, you give it your desired cooking temp setpoint.  It will then ramp up the temperature to the set point by stoking the fire in a very controlled manner.  It uses a PID algorithm combined with some sensible delays based on proximity to your setpoint to ramp up the temperature without ending up with a raging fire and overshooting the set point.  Once its up to temp it will send you a message and you can put the meat on.
 
 ##### BBQ Pit Starting to ramp up to temps.  (Definitely need a nice case to house all the electronics)
-![](https://github.com/justindean/PitmasterPi/blob/master/Images/pit_ramping.JPG)
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/pit_ramping2.JPG)
 
 ### -Cooking Temperature Hold:  
 This is the main function of PitmasterPi.  Its main goal in life is to keep the fire stoked to the appropriate level to keep the cooking chamber dialed into your desired set temp.  All day, all night.  This is the piece that takes PitOps from being like working in the NOC on Cyber Monday after a major press release to more like being Secondary On-call for a very stable system.  PitmasterPi uses the same PID algorithm to dynamically keep temps dialed in within a couple degrees.  Having this functionality has changed BBQ'ing from being a huge "Waterfall" type production with lots of prep, scheduling and logistics to manage "BBQ Release Day" to a much more "Continual Delivery" model where I have an automated PitOps pipeline in place, where I can confidently deploy a large piece of meat into production and know it will produce consistent results.
@@ -168,7 +168,7 @@ Recent PitmasterPi Cooks:
 ![](https://github.com/justindean/PitmasterPi/blob/master/Images/pulled-pork.JPG)
 
 ### Smoked Sausage:
-![](https://github.com/justindean/PitmasterPi/blob/master/Images/sausages.jpg)
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/sausages2.jpg)
 
 ### St. Louis Style Ribs:
 ![](https://github.com/justindean/PitmasterPi/blob/master/Images/ribs-uncooked.JPG)
