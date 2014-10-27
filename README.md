@@ -59,6 +59,10 @@ PitmasterPi also uses Dweet.io for storing temperature data.  Dweet.io allows fo
 ### -Real-Time Dashboard: 
 We use Freeboard.io.  Freeboard.io is a very simple dashboard creater that uses the message data we put into dweet.io.  Gives us a nice dashboard for real time BBQ Pit data on any browser.  I.e. Sitting at your sons football game, you can watch your Pit temps on your iphone.
 
+#### Freeboard.io Real-Time Dashboard:
+![Freeboard.io real-time dashboard](https://github.com/justindean/PitmasterPi/blob/master/Images/freeboard.png)
+
+
 #### Freeboard.io Real-Time Dashboard snaptop from Iphone while at kids football game:
 ![Freeboard.io real-time dashboard snapshop from Iphone while at kids football game](https://github.com/justindean/PitmasterPi/blob/master/Images/freeboard-iphone.PNG)
 
