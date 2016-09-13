@@ -1,5 +1,7 @@
-PitmasterPi
+PitmasterPi - Now runs in Docker!!
 ===========
+
+![](https://github.com/justindean/PitmasterPi/blob/master/Images/Docker-Pitmaster-Pi.jpg)
 
 BBQ Automated Temperature Controller using Raspberry Pi and some Devops type practices/toolchains for improving the state of "PitOps".
 
