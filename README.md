@@ -5,6 +5,11 @@ Docker Image on docker hub: https://hub.docker.com/r/jdean/pitmasterpi/
 
 ![](https://github.com/justindean/PitmasterPi/blob/master/Images/Docker-Pitmaster-Pi.jpg)
 
+Why Docker?  Seriously, why not!  Running Pitmaster Pi in a docker container is a great way to abstract away some of the complexities and nuances of the Rpi OS and hardware differences among the fleet of slightly different variations.  Most of us are running Docker or some kind of container strategy in our day jobs so running something like Pitmaster Pi on Arm based CPU architecture with direct hardware access requirements was just a great way to get some hands on exposure to the gnarly side of 'Dockerizing a Legacy App.' 
+
+What is Pitmaster Pi?:
+===========
+
 BBQ Automated Temperature Controller using Raspberry Pi and some Devops type practices/toolchains for improving the state of "PitOps".
 
 The goal of this project is to marry the Devops type philosophies, spirit and practices with the art of making great BBQ in order to produce a much more consistant and quality finished product each and every time.  Obviously its a very loose coupling of the two worlds, but there are definitely efficiencies to be gained by leveraging the practices the Devops community has been continuing to develop and tune.  
