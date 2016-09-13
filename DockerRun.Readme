@@ -1,0 +1,6 @@
+
+Use this command to start the PitmasterPi container.  It will automatically install the temp control drivers (needs priv to dev/mem/sys), it will ininitialize the hardware and then start the pitmaster pi with a set temp of 225.  
+
+docker run --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged -ti justin_dean/pitmasterpi
+
+
